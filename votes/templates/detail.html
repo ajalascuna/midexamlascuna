@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+this is the index page
+{% endblock %}
+
+
+{% block body %}
+{{ candidate.lastname }}, {{ candidate.firstname }} <br />
+Position: {{ candidate.position }}<br />
+Votes: {{ candidate.votes.all.count }}<br/>
+Platform: {{ candidate.platform }} <br/>
+<br/>
+<a class="waves-effect waves-light btn-small" href="{% url 'votes:index' %}">Return</a>
+<a class="waves-effect waves-light btn-small" href="{% url 'votes:index'  %}">Vote</a><br/>
+
+{% endblock %}
